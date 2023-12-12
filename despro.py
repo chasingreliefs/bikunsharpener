@@ -50,9 +50,9 @@ def show_people_graph(all_data):
 
     # Sort data berdasarkan timestamp
     all_data_sorted = sorted(all_data, key=lambda x: x["timestamp"][0])
-    last_10_data = all_data_sorted[-10:]
+    last_30_data = all_data_sorted[-30:]
 
-    for data in last_10_data:
+    for data in last_30_data:
         if "timestamp" in data and "Orang" in data:
             timestamp_str = data["timestamp"][0]
             timestamp_obj = pd.to_datetime(timestamp_str) + pd.Timedelta(hours=7)
@@ -110,9 +110,9 @@ def show_bikun_presence_graph(all_data):
 
     all_data_sorted = sorted(all_data, key=lambda x: x["timestamp"][0])
 
-    last_10_data = all_data_sorted[-10:]
+    last_30_data = all_data_sorted[-30:]
 
-    for data in last_10_data:
+    for data in last_30_data:
         if "timestamp" in data and "Bikun" in data:
             timestamp_str = data["timestamp"][0]
             timestamp_obj = pd.to_datetime(timestamp_str) + pd.Timedelta(hours=7)
